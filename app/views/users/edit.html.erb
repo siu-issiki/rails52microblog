@@ -9,4 +9,9 @@
       <a href="http://gravatar.com/emails" target="_blank">Change</a>
     </div>
   </div>
+  <div class="col-md-6 col-md-offset-3">
+    <hr>
+    <%= link_to "delete", @user, method: :delete,
+                                  data: { confirm: "You sure?" }, class: "btn btn-danger delete"%>
+  </div>
 </div>

@@ -33,6 +33,14 @@ textarea {
   margin-bottom: 10px;
 }
 
+hr{
+  border:none;
+  border-top:dashed 1px #CCC;
+  height:1px;
+  color:#FFFFFF;
+  margin: 0 6 0 6;
+}
+
 /* header */
 
 #logo {
@@ -118,7 +126,7 @@ aside {
 
 /* forms */
 
-input, textarea, select, .uneditable-input {
+input, textarea, select, .uneditable-input, .delete {
   border: 1px solid #bbb;
   width: 100%;
   margin-bottom: 15px;
