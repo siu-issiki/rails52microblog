@@ -1,4 +1,5 @@
 @import "bulma";
+@import "font-awesome";
 
 // Navbar
 
@@ -9,4 +10,10 @@
       color: white;
     }
   }
+}
+
+// microposts
+
+.content {
+  color: black;
 }
