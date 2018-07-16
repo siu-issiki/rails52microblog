@@ -6,7 +6,7 @@
     <%= form_for(:password_reset, url: password_resets_path) do |f| %>
       <div class="field">
         <%= f.label :email, class: "label" %>
-        <%= f.email_field :email, class: 'input' %>
+        <%= f.email_field :email, class: 'input', autofocus: true %>
       </div>
 
       <div class="field">
