@@ -10,13 +10,8 @@
         <p>
           <strong><%= link_to micropost.user.name, micropost.user %></strong> <small><%= time_ago_in_words(micropost.created_at) %></small>
           <% if current_user?(micropost.user) %>
-            <%= link_to micropost_path(id: micropost.id), data: { confirm: "You sure?" }, method: :delete do %>
-              <span class="icon is-large is-pulled-right">
-                <i class="fa fa-trash fa-lg"></i>
-              </span>
-            <% end %>
             <%= link_to edit_micropost_path(id: micropost.id, method: :edit) do %>
-              <span class="icon is-large is-pulled-right">
+              <span class="icon is-pulled-right">
                 <i class="fa fa-edit fa-lg"></i>
               </span>
             <% end %>
