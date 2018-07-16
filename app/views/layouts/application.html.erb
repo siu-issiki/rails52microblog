@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta data-n-head="true" charset="utf-8">
+    <meta data-n-head="true" content="width=device-width,initial-scale=1" name="viewport">
     <title><%= full_title(yield(:title)) %></title>
     <%= render 'layouts/rails_default' %>
     <%= render 'layouts/shim' %>
@@ -19,4 +21,16 @@
     </section>
 
   </body>
+
+  <script type="text/javascript">
+  document.body.addEventListener('keydown', function(e) {
+    if(!(e.keyCode == 13 && e.metaKey)) return;
+  
+    var target = e.target;
+    if(target.form) {
+      target.form.submit();
+    }
+  });
+
+  </script>
 </html>
