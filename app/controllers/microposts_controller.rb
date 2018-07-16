@@ -5,17 +5,35 @@ class MicropostsController < ApplicationController
   def create
     @micropost = current_user.microposts.build(micropost_params)
     if @micropost.save
-      flash[:success] = "Micropost created!"
       redirect_to root_url
     else
       render 'static_pages/home'
     end
   end
 
+  def show
+    @micropost = Micropost.find_by(id: params[:id])
+  end
+
+  def edit
+    @micropost = current_user.microposts.find_by(id: params[:id])
+  end
+
+  def update
+    @micropost = current_user.microposts.find_by(id: params[:id])
+    if @micropost.update_attributes(micropost_params)
+      flash[:success] = "Post updated"
+      redirect_to root_path
+    else
+      flash[:danger] = "Edit failed"
+      render root_path
+    end
+  end
+
   def destroy
     @micropost.destroy
     flash[:success] = "Micropost deleted"
-    redirect_to request.referrer || root_url
+    redirect_to root_url
   end
 
   private
