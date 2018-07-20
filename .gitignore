@@ -35,3 +35,6 @@ vendor/bundle
 .DS_Store
 .idea
 .secret
+
+# docker
+/docker/mysql/volumes

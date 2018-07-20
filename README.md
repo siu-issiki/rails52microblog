@@ -1,24 +1,28 @@
 # README
+## SETUP
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+edit ./docker/mysql/password.yml
+```
+version: '2'
+services:
+  password:
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+```
 
-Things you may want to cover:
+```
+$ docker-compose build
+$ docker-compose run --rm web rails db:create
+$ docker-compose run --rm web rails db:migrate
+```
 
-* Ruby version
+## DEVELOP
+```
+$ docker-compose up -d
+```
+access http://localhost:3000/
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## END
+```
+$ docker-compose down
+```
