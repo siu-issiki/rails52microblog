@@ -1,0 +1,21 @@
+- provide(:title, "Log in")
+section.hero
+  .hero-body
+    h1.title Log in
+    = form_for(:session, url: login_path) do |f|
+      .field
+        = f.label :email
+        = f.email_field :email, class: 'input', autofocus: true
+      .field
+        = f.label :password
+        = link_to "(forgot password)", new_password_reset_path
+        = f.password_field :password, class: 'input'
+      .field
+        = f.label :remember_me, class: "checkbox" do
+          = f.check_box :remember_me
+          span Remember me on this computer
+      .control
+        = f.submit "Log in", class: "button is-link"
+    div style=("padding-top: 1rem;") 
+      small
+        | New user? #{link_to "Sign up now!", signup_path}
