@@ -1,0 +1,9 @@
+- provide(:title, 'All users')
+section.hero
+  .hero-body
+    h1.title All users
+    hr
+    = will_paginate @user, renderer: BulmaPagination::Rails
+    ul.users
+      = render @users
+    = will_paginate @user, renderer: BulmaPagination::Rails

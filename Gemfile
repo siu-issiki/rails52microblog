@@ -7,6 +7,7 @@ gem 'rails', '~> 5.2.0'
 gem "jquery-rails"
 gem "bulma-rails", "~> 0.7.1"
 gem "font-awesome-rails"
+gem 'slim-rails', '3.1.3'
 gem 'will_paginate',           '3.1.6'
 gem 'will_paginate-bulma'
 gem 'bcrypt', '3.1.11'

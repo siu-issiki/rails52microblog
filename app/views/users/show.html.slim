@@ -1,0 +1,18 @@
+- provide(:title, @user.name)
+section.hero
+  .hero-body
+    .columns
+      .column.is-one-third
+        aside.menu
+          section.user_info
+            h1.title
+              = @user.name
+            = gravatar_for @user
+      .column
+        .col-md-8
+          - if @user.microposts.any?
+            h3.subtitle
+              | Microposts (#{@user.microposts.count})
+            ol.microposts
+              = render @microposts
+            = will_paginate @microposts, renderer: BulmaPagination::Rails

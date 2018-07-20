@@ -1,0 +1,19 @@
+- if logged_in?
+  .columns
+    .column.is-one-third-desktop
+      aside
+        section.user_info
+          = render 'shared/user_info'
+        section.micropost_form
+          = render 'shared/micropost_form'
+    .column.is-two-third-desktop
+      h3.subtitle Micropost feed
+      = render 'shared/feed'
+      
+- else
+
+  section.hero.is-large
+    .hero-body
+      .container.has-text-centered
+        h1.title Welcome to the Microblog!
+        h1.title = link_to "Sign up now!", signup_path, class: "button is-medium is-info is-outlined"
