@@ -37,5 +37,5 @@ vendor/bundle
 .secret
 
 # docker
-/docker/mysql/volumes
+/docker/mysql/volumes/*
 /docker/mysql/password.yml
