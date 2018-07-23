@@ -1,16 +1,18 @@
 FROM ruby:2.5.1
 ENV LANG C.UTF-8
-# for MySQL
-RUN apt-get update -qq && apt-get install -y build-essential mysql-client nodejs
 
-RUN gem install bundler
+RUN apt-get update -qq && \
+    apt-get install -y apt-utils \
+                       build-essential \
+                       libpq-dev \
+                       nodejs \
+                       mysql-client
 
-WORKDIR /tmp
-ADD Gemfile Gemfile
-ADD Gemfile.lock Gemfile.lock
-RUN bundle install
+RUN mkdir /app
+WORKDIR /app
+ADD Gemfile /app/Gemfile
+ADD Gemfile.lock /app/Gemfile.lock
+RUN bundle install -j4
+ADD . /app
 
-ENV APP_HOME /myapp
-RUN mkdir -p $APP_HOME
-WORKDIR $APP_HOME
-ADD . $APP_HOME
+EXPOSE 3000

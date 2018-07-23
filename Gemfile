@@ -4,6 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.5.1'
 
 gem 'rails', '~> 5.2.0'
+gem 'unicorn'
 gem "jquery-rails"
 gem "bulma-rails", "~> 0.7.1"
 gem "font-awesome-rails"
@@ -41,7 +42,7 @@ group :test do
 end
 
 group :production do
-  gem 'pg', '~> 0.18.4'
+  gem 'mysql2'
   gem 'fog', '1.42'
 end
 
