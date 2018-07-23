@@ -39,3 +39,4 @@ vendor/bundle
 # docker
 /docker/mysql/volumes/*
 /docker/mysql/password.yml
+!.gitkeep
