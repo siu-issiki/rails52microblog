@@ -11,40 +11,38 @@ html
     section.section
       .container
         - flash.each do |message_type, message|
-          .notification.is-= message_type
-            = message
+          div class=("notification is-#{message_type}") = message
         = yield
         = render 'layouts/footer'
-        = debug(params) if Rails.env.development? 
+        = debug(params) if Rails.env.development?
+      javascript:
 
-    javascript:
-
-      // Get all "navbar-burger" elements
-      navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
-      // Check if there are any navbar burgers
-      if (navbarBurgers.length > 0) {
-    
-        // Add a click event on each of them
-        navbarBurgers.forEach( el => {
-          el.addEventListener('click', () => {
-    
-            // Get the target from the "data-target" attribute
-            const target = el.dataset.target;
-            const $target = document.getElementById(target);
-    
-            // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
-            el.classList.toggle('is-active');
-            $target.classList.toggle('is-active');
-
-          });
-        });
-      }
-
-      document.body.addEventListener('keydown', function(e) {
-        if(!(e.keyCode == 13 && e.metaKey)) return;
+        // Get all "navbar-burger" elements
+        navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+        // Check if there are any navbar burgers
+        if (navbarBurgers.length > 0) {
       
-        var target = e.target;
-        if(target.form) {
-          target.form.submit();
+          // Add a click event on each of them
+          navbarBurgers.forEach( el => {
+            el.addEventListener('click', () => {
+      
+              // Get the target from the "data-target" attribute
+              const target = el.dataset.target;
+              const $target = document.getElementById(target);
+      
+              // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+              el.classList.toggle('is-active');
+              $target.classList.toggle('is-active');
+
+            });
+          });
         }
-      });
+
+        document.body.addEventListener('keydown', function(e) {
+          if(!(e.keyCode == 13 && e.metaKey)) return;
+        
+          var target = e.target;
+          if(target.form) {
+            target.form.submit();
+          }
+        });
