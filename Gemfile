@@ -18,9 +18,9 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
-gem 'carrierwave',             '1.2.2'
 gem 'mini_magick',             '4.7.0'
 gem 'bootsnap', '>= 1.1.0', require: false
+gem "aws-sdk-s3", require: false
 
 group :development, :test do
   gem 'faker',          '1.7.3'
@@ -43,7 +43,6 @@ end
 
 group :production do
   gem 'mysql2'
-  gem 'fog', '1.42'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

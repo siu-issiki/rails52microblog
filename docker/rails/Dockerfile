@@ -5,8 +5,9 @@ RUN apt-get update -qq && \
     apt-get install -y apt-utils \
                        build-essential \
                        libpq-dev \
+                       mysql-client \
                        nodejs \
-                       mysql-client
+                       vim
 
 RUN mkdir /app
 WORKDIR /app
